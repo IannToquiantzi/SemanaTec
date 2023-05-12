@@ -36,8 +36,9 @@ def square(start, end):
 
 
 def circle():
-    """Draw circle from start to end."""
-    pass # TODO
+    t = Turtle()
+    r = 50
+    t.circle(r)
     
 def rectangle(start, end):
     """Draw rectangle from start to end."""
