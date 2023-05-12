@@ -36,6 +36,10 @@ def square(start, end):
 
 
 def circle():
+<<<<<<< HEAD
+=======
+    """Draw circle from start to end."""
+>>>>>>> 9112dc8ba30606afe42decadc3f54dc281dff0dc
     t = Turtle()
     r = 50
     t.circle(r)
@@ -56,7 +60,10 @@ def rectangle(start, end):
 
 def triangle(start, end):
     """Draw triangle from start to end."""
-    pass  # TODO
+    for i in range(3):
+        forward(100)
+        left(120)
+    
 
 
 def tap(x, y):
@@ -87,6 +94,7 @@ onkey(lambda: color('white'), 'W')
 onkey(lambda: color('green'), 'G')
 onkey(lambda: color('blue'), 'B')
 onkey(lambda: color('red'), 'R')
+onkey(lambda: color('orange'), 'O')
 onkey(lambda: store('shape', line), 'l')
 onkey(lambda: store('shape', square), 's')
 onkey(lambda: store('shape', circle), 'c')
