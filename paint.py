@@ -36,10 +36,6 @@ def square(start, end):
 
 
 def circle():
-<<<<<<< HEAD
-=======
-    """Draw circle from start to end."""
->>>>>>> 9112dc8ba30606afe42decadc3f54dc281dff0dc
     t = Turtle()
     r = 50
     t.circle(r)
