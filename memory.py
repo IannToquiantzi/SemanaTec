@@ -15,7 +15,12 @@ from turtle import *
 from freegames import path
 
 car = path('car.gif')
-tiles = list(range(32)) * 2
+tiles = [
+    'a','b','c','d','e','f','g','h',
+    'i','j','k','l','m','n','ñ','o',
+    'p','q','r','s','t','u','v','w',
+    'x','y','z','1','2','3','4','5'
+    ] * 2
 state = {'mark': None}
 hide = [True] * 64
 num_taps = 0 #Contador global para el numero de clics
@@ -83,10 +88,7 @@ def draw():
         x, y = xy(mark)
         up()
         #Ajustar el centro dependiendo si el numero de cuadro es de dos digitos: 
-        if tiles[mark] > 9:
-            goto(x + 4, y)
-        else:
-            goto(x + 15, y)
+        goto(x + 15, y)
         color('black')
         write(tiles[mark],font=('Arial', 30, 'normal'))
 
