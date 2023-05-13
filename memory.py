@@ -17,7 +17,7 @@ from freegames import path
 car = path('car.gif')
 tiles = list(range(32)) * 2
 state = {'mark': None}
-hide = [False] * 64
+hide = [True] * 64
 num_taps = 0 #Contador global para el numero de clics
 
 def square(x, y):
