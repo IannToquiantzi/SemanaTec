@@ -17,8 +17,8 @@ from freegames import path
 car = path('car.gif')
 tiles = list(range(32)) * 2
 state = {'mark': None}
-hide = [True] * 64
-
+hide = [False] * 64
+num_taps = 0 #Contador global para el numero de clics
 
 def square(x, y):
     """Draw white square with black outline at (x, y)."""
@@ -42,11 +42,14 @@ def xy(count):
     """Convert tiles count to (x, y) coordinates."""
     return (count % 8) * 50 - 200, (count // 8) * 50 - 200
 
-
 def tap(x, y):
     """Update mark and hidden tiles based on tap."""
     spot = index(x, y)
     mark = state['mark']
+    #Contador de numero de clics
+    global num_taps 
+    num_taps += 1
+
 
     if mark is None or mark == spot or tiles[mark] != tiles[spot]:
         state['mark'] = spot
@@ -54,6 +57,12 @@ def tap(x, y):
         hide[spot] = False
         hide[mark] = False
         state['mark'] = None
+
+    #Comprobacion de que todos los valores de hide sean falsos:
+    comprobation = all([x == False for x in hide])
+    if comprobation == True:
+        print('¡Felicidades has completado el juego!')
+        print('Numero de clics totales: ', num_taps) #Se despliega en pantalla en numero total de taps. 
 
 
 def draw():
