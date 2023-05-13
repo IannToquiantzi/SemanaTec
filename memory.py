@@ -82,9 +82,13 @@ def draw():
     if mark is not None and hide[mark]:
         x, y = xy(mark)
         up()
-        goto(x + 2, y)
+        #Ajustar el centro dependiendo si el numero de cuadro es de dos digitos: 
+        if tiles[mark] > 9:
+            goto(x + 4, y)
+        else:
+            goto(x + 15, y)
         color('black')
-        write(tiles[mark], font=('Arial', 30, 'normal'))
+        write(tiles[mark],font=('Arial', 30, 'normal'))
 
     update()
     ontimer(draw, 100)
